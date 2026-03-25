@@ -6,7 +6,6 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-import com.example.qlpt.entities.Account;
 import com.example.qlpt.entities.Category;
 import com.example.qlpt.entities.Order;
 import com.example.qlpt.entities.Product;

@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.qlpt.R;
 import com.example.qlpt.dal.AppDB;
-import com.example.qlpt.entities.Account;
 import com.example.qlpt.entities.Category;
 import com.example.qlpt.entities.Product;
 

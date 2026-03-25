@@ -5,7 +5,6 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.example.qlpt.entities.Account;
 import com.example.qlpt.entities.CartView;
 import com.example.qlpt.entities.Category;
 import com.example.qlpt.entities.Order;
