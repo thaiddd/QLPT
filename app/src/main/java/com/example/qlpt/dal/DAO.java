@@ -9,7 +9,6 @@ import com.example.qlpt.entities.Account;
 import com.example.qlpt.entities.CartView;
 import com.example.qlpt.entities.Category;
 import com.example.qlpt.entities.Order;
-import com.example.qlpt.entities.OrderDetail;
 import com.example.qlpt.entities.Product;
 
 import java.util.List;

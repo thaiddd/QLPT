@@ -9,7 +9,6 @@ import androidx.room.RoomDatabase;
 import com.example.qlpt.entities.Account;
 import com.example.qlpt.entities.Category;
 import com.example.qlpt.entities.Order;
-import com.example.qlpt.entities.OrderDetail;
 import com.example.qlpt.entities.Product;
 
 @Database(entities = {

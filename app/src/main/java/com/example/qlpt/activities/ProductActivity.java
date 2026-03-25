@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.qlpt.R;
 import com.example.qlpt.dal.AppDB;
 import com.example.qlpt.entities.Order;
-import com.example.qlpt.entities.OrderDetail;
 import com.example.qlpt.entities.Product;
 
 import java.util.ArrayList;
