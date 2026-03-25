@@ -1,4 +1,4 @@
-package com.example.shoppingmanager.dal;
+package com.example.qlpt.dal;
 
 import androidx.room.Dao;
 import androidx.room.Insert;

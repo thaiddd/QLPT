@@ -1,4 +1,4 @@
-package com.example.shoppingmanager.dal;
+package com.example.qlpt.dal;
 
 import android.content.Context;
 
