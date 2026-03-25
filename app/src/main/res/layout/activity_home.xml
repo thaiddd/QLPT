@@ -3,14 +3,17 @@
     android:orientation="vertical"
     android:padding="16dp"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal">
 
     <TextView
         android:id="@+id/tvWelcome"
         android:text="Welcome"
         android:textSize="20sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"/>
 
     <Button
         android:id="@+id/btnLoginScreen"
@@ -19,14 +22,20 @@
         android:layout_height="wrap_content"/>
 
     <Button
+        android:id="@+id/btnCategories"
+        android:text="Xem danh mục sản phẩm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Button
         android:id="@+id/btnProducts"
-        android:text="Xem sản phẩm"
+        android:text="Xem tất cả sản phẩm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <Button
         android:id="@+id/btnCart"
-        android:text="Giỏ hàng"
+        android:text="Giỏ hàng của tôi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
@@ -34,5 +43,6 @@
         android:id="@+id/btnLogout"
         android:text="Đăng xuất"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
 </LinearLayout>

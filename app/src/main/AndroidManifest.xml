@@ -17,10 +17,17 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.LoginActivity" android:exported="false" />
+        <activity android:name=".activities.HomeActivity" android:exported="false" />
+        <activity android:name=".activities.CategoryActivity" android:exported="false" />
+        <activity android:name=".activities.ProductActivity" android:exported="false" />
+        <activity android:name=".activities.CartActivity" android:exported="false" />
+        <activity android:name=".activities.InvoiceActivity" android:exported="false" />
+
     </application>
 
 </manifest>

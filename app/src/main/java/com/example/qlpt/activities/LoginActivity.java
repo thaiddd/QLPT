@@ -11,7 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.qlpt.R;
 import com.example.qlpt.dal.AppDB;
+import com.example.qlpt.entities.Account;
 import com.example.qlpt.entities.Category;
+import com.example.qlpt.entities.Order;
+import com.example.qlpt.entities.OrderDetail;
 import com.example.qlpt.entities.Product;
 
 public class LoginActivity extends AppCompatActivity {
@@ -45,12 +48,46 @@ public class LoginActivity extends AppCompatActivity {
                 editor.putBoolean("isLogin", true);
                 editor.apply();
 
-                startActivity(new Intent(this, HomeActivity.class));
+                // Kiểm tra xem có sản phẩm chờ được thêm vào giỏ hàng không
+                int pendingProductId = getIntent().getIntExtra("pendingProductId", -1);
+                if (pendingProductId != -1) {
+                    addProductToCart(u, pendingProductId);
+                    startActivity(new Intent(this, CartActivity.class));
+                } else {
+                    startActivity(new Intent(this, HomeActivity.class));
+                }
                 finish();
             } else {
                 Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void addProductToCart(String username, int productId) {
+        Product p = db.dao().getProductById(productId);
+        if (p == null) return;
+
+        Order order = db.dao().getPendingOrder(username);
+        if (order == null) {
+            order = new Order();
+            order.username = username;
+            order.orderDate = System.currentTimeMillis();
+            order.status = "Pending";
+            long oid = db.dao().insertOrder(order);
+            order.id = (int) oid;
+        }
+
+        OrderDetail detail = db.dao().getOrderDetail(order.id, p.id);
+        if (detail == null) {
+            detail = new OrderDetail();
+            detail.orderId = order.id;
+            detail.productId = p.id;
+            detail.quantity = 1;
+            detail.unitPrice = p.price;
+            db.dao().insertOrderDetail(detail);
+        } else {
+            db.dao().updateQuantity(detail.id, detail.quantity + 1);
+        }
     }
 
     private void seedData(){
